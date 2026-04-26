@@ -15,13 +15,17 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
 
     std::vector<StoneMath::Token> tokenized_vector = std::vector<StoneMath::Token>();
 
+
+    //main loop loops around the input expresion
     for(int i = 0; i < text.length(); i++) {
         currentChar = text[i];
 
+        //skips the space
         if(currentChar == ' ') {
             continue;
         }
 
+        //create a token based on the currentChar
         if(currentChar == '+') {
             tokenized_vector.push_back(Token{TokenType::Plus,"+"});
         }
@@ -44,8 +48,8 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
             tokenized_vector.push_back(Token{TokenType::RParen,")"});
         }
         else if(isdigit(currentChar)) {
+            //reads numbers
             std::string accumulator = "";
-
             while(i < text.length() && (isdigit(text[i]) || text[i] == '.')) {
                 accumulator += text[i];
                 i++;
@@ -55,6 +59,7 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
             tokenized_vector.push_back(Token{TokenType::Number,accumulator});
         }
         else if(isalpha(currentChar)) {
+            //this is for the functions or variables
             std::string accumulator = "";
             while(i < text.length() && (isalpha(text[i]))) {
                 accumulator += text[i];
@@ -69,13 +74,12 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
                 tokenized_vector.push_back(Token{TokenType::Variable,accumulator});
             }
         }
-
-
-
-
+        else {
+            tokenized_vector.push_back(Token{TokenType::Error,std::string(1, currentChar)});
+            return tokenized_vector;
+        }
     }
     tokenized_vector.push_back(Token{TokenType::EOF_Type,""});
-
 
     return tokenized_vector;
 

@@ -4,6 +4,9 @@
 
 
 #pragma once
+#include <stack>
+#include <queue>
+
 namespace StoneMath {
     class Parser {
         public:

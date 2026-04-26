@@ -19,7 +19,8 @@ namespace StoneMath {
         RParen,   // )
         Variable, // x, y
         Function, // sin, cos, sqrt
-        EOF_Type  // Koniec stringa
+        EOF_Type, // end of string
+        Error     // for incorect char
     };
 
     struct Token {
