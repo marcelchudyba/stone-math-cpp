@@ -11,16 +11,11 @@ StoneMath::Lexer::Lexer(const std::string &text) {
     this->text = text;
 }
 
-
-
-
-
 std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
 
-
-
-
     std::vector<StoneMath::Token> tokenized_vector = std::vector<StoneMath::Token>();
+
+    //this is a lambda
     auto InjectMultiplyIfNeeded = [&]() {
         if (!tokenized_vector.empty()) {
 
@@ -54,6 +49,9 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
         }
         else if(currentChar == '/') {
             tokenized_vector.push_back(Token{TokenType::Divide,"/"});
+        }
+        else if(currentChar == '^') {
+            tokenized_vector.push_back(Token{TokenType::Power,"^"});
         }
         else if(currentChar == '=') {
             tokenized_vector.push_back(Token{TokenType::Equals,"="});
@@ -103,7 +101,3 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
     return tokenized_vector;
 
 }
-
-
-
-
