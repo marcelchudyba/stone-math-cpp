@@ -3,6 +3,7 @@
 //
 #include "Lexer.h"
 
+#include <chrono>
 #include <vector>
 
 
@@ -11,9 +12,25 @@ StoneMath::Lexer::Lexer(const std::string &text) {
 }
 
 
+
+
+
 std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
 
+
+
+
     std::vector<StoneMath::Token> tokenized_vector = std::vector<StoneMath::Token>();
+    auto InjectMultiplyIfNeeded = [&]() {
+        if (!tokenized_vector.empty()) {
+
+            TokenType last_token = tokenized_vector.back().type;
+
+              if(last_token == TokenType::Number || last_token == TokenType::RParen) {
+                 tokenized_vector.push_back(Token{TokenType::Multiply,"*"});
+              }
+        }
+    };
 
 
     //main loop loops around the input expresion
@@ -42,6 +59,7 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
             tokenized_vector.push_back(Token{TokenType::Equals,"="});
         }
         else if(currentChar == '(') {
+            InjectMultiplyIfNeeded();
             tokenized_vector.push_back(Token{TokenType::LParen,"("});
         }
         else if(currentChar == ')') {
@@ -66,8 +84,9 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
                 i++;
             }
             i--;
-
+            InjectMultiplyIfNeeded();
             if(accumulator == "sin" || accumulator == "cos" || accumulator == "tan" || accumulator == "sqrt") {
+
                 tokenized_vector.push_back(Token{TokenType::Function,accumulator});
             }
             else {

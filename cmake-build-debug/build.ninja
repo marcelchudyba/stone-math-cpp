@@ -49,20 +49,20 @@ cmake_ninja_workdir = C$:\Projects\StoneMath\cmake-build-debug\
 
 build cmake_object_order_depends_target_StoneMath: phony || .
 
-build CMakeFiles\StoneMath.dir\main.cpp.obj.ddi: CXX_SCAN__StoneMath_Debug C$:\Projects\StoneMath\main.cpp || cmake_object_order_depends_target_StoneMath
-  DEP_FILE = CMakeFiles\StoneMath.dir\main.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\StoneMath.dir\main.cpp.obj.ddi
+build CMakeFiles\StoneMath.dir\tests\main.cpp.obj.ddi: CXX_SCAN__StoneMath_Debug C$:\Projects\StoneMath\tests\main.cpp || cmake_object_order_depends_target_StoneMath
+  DEP_FILE = CMakeFiles\StoneMath.dir\tests\main.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\StoneMath.dir\tests\main.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++20 -MDd -Zi
   INCLUDES = -IC:\Projects\StoneMath\include
-  OBJ_FILE = CMakeFiles\StoneMath.dir\main.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\StoneMath.dir\main.cpp.obj.ddi.i
+  OBJ_FILE = CMakeFiles\StoneMath.dir\tests\main.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles\StoneMath.dir\tests\main.cpp.obj.ddi.i
 
-build CMakeFiles\StoneMath.dir\main.cpp.obj: CXX_COMPILER__StoneMath_scanned_Debug C$:\Projects\StoneMath\main.cpp | CMakeFiles\StoneMath.dir\main.cpp.obj.modmap || cmake_object_order_depends_target_StoneMath CMakeFiles\StoneMath.dir\CXX.dd
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\StoneMath.dir\main.cpp.obj.modmap
+build CMakeFiles\StoneMath.dir\tests\main.cpp.obj: CXX_COMPILER__StoneMath_scanned_Debug C$:\Projects\StoneMath\tests\main.cpp | CMakeFiles\StoneMath.dir\tests\main.cpp.obj.modmap || cmake_object_order_depends_target_StoneMath CMakeFiles\StoneMath.dir\CXX.dd
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles\StoneMath.dir\tests\main.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++20 -MDd -Zi
   INCLUDES = -IC:\Projects\StoneMath\include
   OBJECT_DIR = CMakeFiles\StoneMath.dir
-  OBJECT_FILE_DIR = CMakeFiles\StoneMath.dir
+  OBJECT_FILE_DIR = CMakeFiles\StoneMath.dir\tests
   TARGET_COMPILE_PDB = CMakeFiles\StoneMath.dir\
   TARGET_PDB = StoneMath.pdb
   dyndep = CMakeFiles/StoneMath.dir/CXX.dd
@@ -139,7 +139,7 @@ build CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj: CXX_COMPILER__StoneMath_sc
   TARGET_PDB = StoneMath.pdb
   dyndep = CMakeFiles/StoneMath.dir/CXX.dd
 
-build CMakeFiles\StoneMath.dir\CXX.dd | C$:\Projects\StoneMath\cmake-build-debug\CMakeFiles\StoneMath.dir\CXXModules.json CMakeFiles\StoneMath.dir\main.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Parser.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj.modmap: CXX_DYNDEP__StoneMath_Debug CMakeFiles\StoneMath.dir\main.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Parser.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj.ddi | C$:\Projects\StoneMath\cmake-build-debug\CMakeFiles\StoneMath.dir\CXXDependInfo.json
+build CMakeFiles\StoneMath.dir\CXX.dd | C$:\Projects\StoneMath\cmake-build-debug\CMakeFiles\StoneMath.dir\CXXModules.json CMakeFiles\StoneMath.dir\tests\main.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Parser.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj.modmap CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj.modmap: CXX_DYNDEP__StoneMath_Debug CMakeFiles\StoneMath.dir\tests\main.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Parser.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj.ddi CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj.ddi | C$:\Projects\StoneMath\cmake-build-debug\CMakeFiles\StoneMath.dir\CXXDependInfo.json
 
 
 # =============================================================================
@@ -149,7 +149,7 @@ build CMakeFiles\StoneMath.dir\CXX.dd | C$:\Projects\StoneMath\cmake-build-debug
 #############################################
 # Link the executable StoneMath.exe
 
-build StoneMath.exe: CXX_EXECUTABLE_LINKER__StoneMath_Debug CMakeFiles\StoneMath.dir\main.cpp.obj CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj CMakeFiles\StoneMath.dir\src\Parser.cpp.obj CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj
+build StoneMath.exe: CXX_EXECUTABLE_LINKER__StoneMath_Debug CMakeFiles\StoneMath.dir\tests\main.cpp.obj CMakeFiles\StoneMath.dir\src\Lexer.cpp.obj CMakeFiles\StoneMath.dir\src\Parser.cpp.obj CMakeFiles\StoneMath.dir\src\Evaluator.cpp.obj CMakeFiles\StoneMath.dir\src\StoneMath.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

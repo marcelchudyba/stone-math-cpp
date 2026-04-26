@@ -14,6 +14,7 @@ namespace StoneMath {
         int position;
         char currentChar;
 
+
     public:
         Lexer(const std::string& text);
         std::vector<Token> Tokenize();

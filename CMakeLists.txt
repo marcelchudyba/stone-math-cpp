@@ -3,7 +3,7 @@ project(StoneMath)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(StoneMath main.cpp
+add_executable(StoneMath tests/main.cpp
         include/Lexer.h
         src/Lexer.cpp
         include/TokenType.h
