@@ -3,6 +3,7 @@
 //
 
 #pragma once
+
 namespace StoneMath {
     class StoneMath {
         public:

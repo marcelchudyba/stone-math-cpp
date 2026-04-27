@@ -1,11 +1,13 @@
 #include <iostream>
+
+#include "Evaluator.h"
 #include "../include/Parser.h"
 #include "Lexer.h"
 #include "Parser.h"
 #include "StoneMath.h"
 
 int main() {
-    StoneMath::Lexer lexer = StoneMath::Lexer("sin ( x ^ 2 ) * ( 2 + x ) - 5 / x");
+    StoneMath::Lexer lexer = StoneMath::Lexer("");
 
     std::vector<StoneMath::Token> tokenized = lexer.Tokenize();
 
@@ -24,4 +26,16 @@ int main() {
     for (auto value: onp_notation) {
         std::cout << value.value << " ";
     }
+    StoneMath::Evaluator evaluator = StoneMath::Evaluator(onp_notation);
+    double output = evaluator.Evaluate(0);
+
+    std::cout << std::endl <<  "equation answer: " << std::endl;
+    std::cout << output << std::endl;
+
+
+
+
+
+
+
 }
