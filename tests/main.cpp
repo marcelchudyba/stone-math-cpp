@@ -7,7 +7,7 @@
 #include "StoneMath.h"
 
 int main() {
-    StoneMath::Lexer lexer = StoneMath::Lexer("");
+    StoneMath::Lexer lexer = StoneMath::Lexer("2 + 3 * 2");
 
     std::vector<StoneMath::Token> tokenized = lexer.Tokenize();
 
