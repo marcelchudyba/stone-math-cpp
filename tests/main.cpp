@@ -7,7 +7,7 @@
 #include "StoneMath.h"
 
 int main() {
-    StoneMath::Lexer lexer = StoneMath::Lexer("2 + 3 * 2");
+    StoneMath::Lexer lexer = StoneMath::Lexer("sqrt ( x ^ 2 + 9 ) * 2 - sin ( x ) / tan ( x )");
 
     std::vector<StoneMath::Token> tokenized = lexer.Tokenize();
 
@@ -27,15 +27,8 @@ int main() {
         std::cout << value.value << " ";
     }
     StoneMath::Evaluator evaluator = StoneMath::Evaluator(onp_notation);
-    double output = evaluator.Evaluate(0);
+    double output = evaluator.Evaluate(4);
 
     std::cout << std::endl <<  "equation answer: " << std::endl;
     std::cout << output << std::endl;
-
-
-
-
-
-
-
 }

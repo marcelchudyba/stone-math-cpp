@@ -80,7 +80,7 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
             }
             i--;
             InjectMultiplyIfNeeded();
-            if(accumulator == "sin" || accumulator == "cos" || accumulator == "tan" || accumulator == "sqrt") {
+            if(accumulator == "sin" || accumulator == "cos" || accumulator == "tan" || accumulator == "tg" || accumulator == "sqrt") {
 
                 tokenized_vector.push_back(Token{TokenType::Function,accumulator});
             }
