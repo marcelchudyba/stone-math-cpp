@@ -27,7 +27,6 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
         }
     };
 
-
     //main loop loops around the input expresion
     for(int i = 0; i < text.length(); i++) {
         currentChar = text[i];

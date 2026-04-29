@@ -1,9 +1,5 @@
 #include "../include/Parser.h"
-#include <iostream>
-#include <vector> // <-- TEGO BRAKOWAŁO
-
-#include "StoneMath.h"
-
+#include <vector>
 
 StoneMath::Parser::Parser(const std::vector<Token>& tokens) : input_tokens(tokens) {};
 
