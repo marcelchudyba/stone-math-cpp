@@ -11,6 +11,6 @@ namespace StoneMath {
     class StoneMath {
         public:
             StoneMath();
-            double GetResult(std::string to_calculate);
+            double GetResult(std::string to_calculate, const double& x);
     };
 }

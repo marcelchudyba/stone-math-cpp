@@ -9,5 +9,5 @@
 int main() {
     StoneMath::StoneMath math = StoneMath::StoneMath();
 
-    std::cout << math.GetResult("sin(2 x)");
+    std::cout << math.GetResult("", 2);;
 }

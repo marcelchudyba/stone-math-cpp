@@ -4,9 +4,9 @@
 
 StoneMath::StoneMath::StoneMath(){};
 
-double StoneMath::StoneMath::GetResult(std::string equation) {
+double StoneMath::StoneMath::GetResult(std::string equation,const double& x) {
 
-    Lexer lexer = Lexer("x + 2");
+    Lexer lexer = Lexer(equation);
 
     std::vector<Token> tokenized = lexer.Tokenize();
 
@@ -15,7 +15,7 @@ double StoneMath::StoneMath::GetResult(std::string equation) {
     std::vector<Token> onp_notation = parser.Parse();
 
     Evaluator evaluator = Evaluator(onp_notation);
-    double output = evaluator.Evaluate(4);
+    double output = evaluator.Evaluate(x);
 
     return output;
 }
