@@ -7,7 +7,6 @@
 
 namespace StoneMath {
     class Parser {
-        private:
         std::vector<Token> input_tokens;
 
         std::stack<Token> operator_stack;

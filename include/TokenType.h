@@ -7,6 +7,7 @@ namespace StoneMath {
         Number,
         Plus,     // +
         Minus,    // -
+        UMinus,   // MinusNumber
         Multiply, // *
         Divide,   // /
         Power,    // ^

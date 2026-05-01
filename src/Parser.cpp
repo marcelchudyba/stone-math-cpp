@@ -19,6 +19,7 @@ int StoneMath::Parser::GetPrecedence(TokenType type) {
 
 std::vector<StoneMath::Token> StoneMath::Parser::Parse() {
 
+    int i = 0;
     for (auto token: input_tokens) {
         if(token.type == TokenType::Number || token.type == TokenType::Variable) {
             output_queue.push_back(token);
@@ -52,6 +53,18 @@ std::vector<StoneMath::Token> StoneMath::Parser::Parse() {
             operator_stack.push(token);
         }
         else {
+
+            //this is for the negative numbers in the start of eqaution
+            if(i == 0 && token.type == TokenType::Minus ) {
+                output_queue.push_back(Token{TokenType::Number, "0"});
+            }
+
+            //this is for a negative number we are only accepting those in betweeen brackets
+            if(!operator_stack.empty() && operator_stack.top().type == TokenType::LParen && token.type == TokenType::Minus) {
+                output_queue.push_back(Token{TokenType::Number, "0"});
+            }
+
+
             //there are going operators
             if(!operator_stack.empty() && GetPrecedence(operator_stack.top().type) > GetPrecedence(token.type)) {
                 Token top = operator_stack.top();
@@ -63,6 +76,7 @@ std::vector<StoneMath::Token> StoneMath::Parser::Parse() {
             operator_stack.push(token);
             }
         }
+        i++;
     }
     return output_queue;
 }

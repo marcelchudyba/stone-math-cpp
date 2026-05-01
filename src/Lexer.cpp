@@ -36,7 +36,6 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
         if(currentChar == ' ') {
             continue;
         }
-
         //create a token based on the currentChar
         if(currentChar == '+') {
             tokenized_vector.push_back(Token{TokenType::Plus,"+"});
@@ -63,9 +62,16 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
         else if(isdigit(currentChar)) {
             //reads numbers
             std::string accumulator = "";
+            int number_of_dots = 0;
             while(i < text.length() && (isdigit(text[i]) || text[i] == '.')) {
+                if(text[i] == '.') {
+                    number_of_dots++;
+                }
                 accumulator += text[i];
                 i++;
+            }
+            if(number_of_dots > 1) {
+                throw std::invalid_argument("Lexer Error: Invalid Number Format");
             }
             i--;
 
@@ -89,14 +95,14 @@ std::vector<StoneMath::Token> StoneMath::Lexer::Tokenize() {
             }
         }
         else {
-            throw std::invalid_argument(std::string("Undefined character: ") + currentChar);
+            throw std::invalid_argument(std::string("Lexer Error: Undefined character: ") + currentChar);
             // tokenized_vector.push_back(Token{TokenType::Error,std::string(1, currentChar)});
             // return tokenized_vector;
         }
     }
 
     if(tokenized_vector.empty()) {
-        throw std::invalid_argument("Empty input");
+        throw std::invalid_argument("Lexer Error: Empty input");
     }
 
     tokenized_vector.push_back(Token{TokenType::EOF_Type,""});

@@ -9,7 +9,6 @@
 
 namespace StoneMath {
     class Lexer {
-    private:
         std::string text;
         int position;
         char currentChar;

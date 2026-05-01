@@ -10,7 +10,6 @@
 
 namespace StoneMath {
     class Evaluator {
-    private:
         std::vector<Token> rpn_tokens;
         std::stack<double> numbers_stack;
         double output_value;
