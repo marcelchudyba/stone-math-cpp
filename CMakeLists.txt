@@ -3,15 +3,17 @@ project(StoneMath)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(StoneMath tests/main.cpp
-        include/Lexer.h
+
+add_library(StoneMath STATIC
         src/Lexer.cpp
-        include/TokenType.h
-        include/Parser.h
         src/Parser.cpp
-        include/Evaluator.h
-        include/StoneMath.h
         src/Evaluator.cpp
         src/StoneMath.cpp
 )
-include_directories(include)
+
+target_include_directories(StoneMath PUBLIC include)
+
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    add_executable(StoneMath_Tests tests/main.cpp)
+    target_link_libraries(StoneMath_Tests PRIVATE StoneMath)
+endif()

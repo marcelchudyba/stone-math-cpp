@@ -1,11 +1,7 @@
-//
-// Created by XXX on 25.04.2026.
-//
 #include "Lexer.h"
 
 #include <chrono>
 #include <vector>
-
 
 StoneMath::Lexer::Lexer(const std::string &text) {
     this->text = text;

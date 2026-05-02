@@ -1,3 +1,4 @@
 C:/Projects/StoneMath/cmake-build-debug/CMakeFiles/StoneMath.dir
+C:/Projects/StoneMath/cmake-build-debug/CMakeFiles/StoneMath_Tests.dir
 C:/Projects/StoneMath/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Projects/StoneMath/cmake-build-debug/CMakeFiles/rebuild_cache.dir
