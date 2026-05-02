@@ -37,6 +37,9 @@ double StoneMath::Evaluator::Function_Type(std::string function_name,  const dou
         return 1/std::tan(top);
     }
     if (function_name == "sqrt") {
+        if(top < 0) {
+            throw std::runtime_error("Mathematical Error: Number under the square cannot be negative!");
+        }
         return std::sqrt(top);
     }
 
@@ -54,6 +57,9 @@ double StoneMath::Evaluator::Evaluate(const double& x) {
             }
         }
         else if(rpn_tokens[i].type == TokenType::Function) {
+            if(numbers_stack.empty()) {
+                throw std::runtime_error("Mathematical Error: Function does not exist!");
+            }
             double top = numbers_stack.top();
             numbers_stack.pop();
 
