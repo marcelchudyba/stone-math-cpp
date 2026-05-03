@@ -8,8 +8,8 @@ void RunTest(int id, const std::string& equation, bool should_fail, double expec
     std::cout << "Test #" << id << ": [" << equation << "] -> ";
 
     try {
-        StoneMath::StoneMath engine;
-        double result = engine.GetResult(equation,0);
+        StoneMath::StoneMath engine = StoneMath::StoneMath(equation);
+        double result = engine.Evaluate(0);
 
         if (should_fail) {
             std::cout << "[PORAZKA] Program policzyl, a powinien rzucic bledem!" << "\n";

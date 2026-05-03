@@ -9,8 +9,16 @@
 
 namespace StoneMath {
     class StoneMath {
+            std::string expr;
+            std::vector<Token> tokenized_expr;
+            std::vector<Token> parsed_expr;
+
         public:
-            StoneMath();
-            double GetResult(std::string to_calculate, const double& x);
+            StoneMath(const std::string& expr);
+
+            std::vector<Token> GetTokenizedExpr();
+            std::vector<Token> GetParsedExpr();
+
+            double Evaluate(const double& x);
     };
 }
